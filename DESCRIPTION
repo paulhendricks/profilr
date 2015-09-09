@@ -1,6 +1,6 @@
 Package: profilr
 Title: Quickly Profile Data in R
-Version: 0.1.0
+Version: 0.1.0.9000
 Description: Allows users to quickly and reliably profile data in R
     using convenience functions. The profiled data returns as a data.frame
     and provides a wealth of common and uncommon summary statistics.
