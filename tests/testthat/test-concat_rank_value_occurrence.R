@@ -1,4 +1,4 @@
-library(profiler)
+library(profilr)
 context("concat_rank_value_occurrence()")
 
 test_that("concat_rank_value_occurrence of character concatenates properly ", {

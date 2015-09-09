@@ -1,4 +1,4 @@
-# profiler 0.1.0
+# profilr 0.1.0
 
 ## Improvements
 

@@ -1,4 +1,4 @@
-library(profiler)
+library(profilr)
 context("frequent_values()")
 
 sample_size <- 10000

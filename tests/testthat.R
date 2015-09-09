@@ -1,4 +1,4 @@
 library(testthat)
-library(profiler)
+library(profilr)
 
-test_check("profiler")
+test_check("profilr")

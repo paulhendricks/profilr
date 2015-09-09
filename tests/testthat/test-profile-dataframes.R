@@ -1,4 +1,4 @@
-library(profiler)
+library(profilr)
 context("profile() on data.frames")
 
 u <- c(TRUE, TRUE, FALSE, NA)

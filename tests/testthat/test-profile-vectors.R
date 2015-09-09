@@ -1,4 +1,4 @@
-library(profiler)
+library(profilr)
 context("profile() on vectors")
 
 u <- c(TRUE, TRUE, FALSE, NA)
