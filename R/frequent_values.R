@@ -13,13 +13,13 @@ frequent_values <- function(.x, n = 5L, type = "most") {
   if(!(type %in% c("most", "least"))) stop("type takes only two values: 'most' or 'least'")
   values <- sort(tapply(as.character(.x), factor(.x), length), decreasing = TRUE)
   if (type == "most"){
-    values_processed <- concat_rank_value_occurrence(r = unname(head(rank(-values, ties.method = "min", na.last = FALSE), n)),
-                                                     n = head(names(values), n),
-                                                     o = head(unname(values), n))
+    values_processed <- concat_rank_value_occurrence(r = unname(utils::head(rank(-values, ties.method = "min", na.last = FALSE), n)),
+                                                     n = utils::head(names(values), n),
+                                                     o = utils::head(unname(values), n))
   } else {
-    values_processed <- concat_rank_value_occurrence(r = unname(rev(tail(rank(-values, ties.method = "min", na.last = FALSE), n))),
-                                                     n = rev(tail(names(values), n)),
-                                                     o = rev(tail(unname(values), n)))
+    values_processed <- concat_rank_value_occurrence(r = unname(rev(utils::tail(rank(-values, ties.method = "min", na.last = FALSE), n))),
+                                                     n = rev(utils::tail(names(values), n)),
+                                                     o = rev(utils::tail(unname(values), n)))
   }
   return(paste(values_processed, collapse = " "))
 }
