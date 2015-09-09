@@ -42,8 +42,8 @@ profile_numeric <- function(.x) {
     .q50_value = function(.x, ...) stats::median(.x, ...),
     .q75_value = function(.x, ...) stats::quantile(.x, probs = 0.75, ...),
     .q100_value = function(.x, ...) max(.x, ...),
-    top_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "most"),
-    bottom_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "least")
+    .top_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "most"),
+    .bottom_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "least")
   )
   return(as.data.frame(lapply(profile_functions,
                               function(.f) .f(.x, na.rm = TRUE)),
@@ -81,8 +81,8 @@ profile_nonnumeric <- function(.x) {
     .q50_value = function(.x, ...) NA,
     .q75_value = function(.x, ...) NA,
     .q100_value = function(.x, ...) max(.x, ...),
-    top_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "most"),
-    bottom_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "least")
+    .top_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "most"),
+    .bottom_5_values = function(.x, ...) frequent_values(.x, n = 5, type = "least")
   )
   return(as.data.frame(lapply(profile_functions,
                               function(.f) .f(.x, na.rm = TRUE)),
