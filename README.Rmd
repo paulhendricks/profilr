@@ -53,11 +53,9 @@ library(dplyr, warn.conflicts = FALSE)
 library(profilr)
 
 mtcars %>% 
-  profile %>% 
-  knitr::kable(format = "markdown")
+  profile
 
 mtcars %>% 
   group_by(cyl) %>% 
-  do(profile(.)) %>% 
-  knitr::kable(format = "markdown")
+  do(profile(.))
 ```
