@@ -2,7 +2,7 @@
 
 ## Improvements
 
-* Implmeneted core functions.
+* Implemented core functions.
 * Updated documentation for all functions.
 * Added tests for all functions.
   
