@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 # profilr
 
 [![Build Status](https://travis-ci.org/paulhendricks/profilr.png?branch=master)](https://travis-ci.org/paulhendricks/profilr)
-[![Build status](https://ci.appveyor.com/api/projects/status/lp9v22mu0kvg11v2/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/profilr/branch/master)
+
 [![codecov.io](http://codecov.io/github/paulhendricks/profilr/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/profilr?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/profilr)](http://cran.r-project.org/package=profilr)
 [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/profilr)](http://cran.rstudio.com/package=profilr)
