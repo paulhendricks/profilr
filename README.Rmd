@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 # profiler
 
 [![Build Status](https://travis-ci.org/paulhendricks/profiler.png?branch=master)](https://travis-ci.org/paulhendricks/profiler)
-[![Build status](https://ci.appveyor.com/api/projects/status/jyh7mh23q1htalww/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/profiler/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/lp9v22mu0kvg11v2/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/profiler/branch/master)
 [![codecov.io](http://codecov.io/github/paulhendricks/profiler/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/profiler?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/profiler)](http://cran.r-project.org/package=profiler)
 [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/profiler)](http://cran.rstudio.com/package=profiler)
