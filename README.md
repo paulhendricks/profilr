@@ -141,3 +141,10 @@ mtcars %>%
 #>   .q75_value (dbl), .q100_value (dbl), .top_5_values (chr),
 #>   .bottom_5_values (chr)
 ```
+
+Author
+------
+
+The original author of `profilr` is [Paul Hendricks](https://github.com/paulhendricks).
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/paulhendricks/)
