@@ -105,8 +105,8 @@ profile.data.frame <- function(.x) {
   call <- match.call()
   .df <- do.call(rbind, lapply(.x, profile))
   .metadata <- data.frame(.column_name = rownames(.df),
-                          .column_class = sapply(.x, class),
-                          .column_type = sapply(.x, typeof),
+                          .column_class = vapply(.x, class, "character"),
+                          .column_type = vapply(.x, typeof, "character"),
                           stringsAsFactors = FALSE,
                           row.names = as.character(1:nrow(.df)))
   .profiled_dataset <- cbind(.metadata, .df)
