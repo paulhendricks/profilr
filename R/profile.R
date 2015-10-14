@@ -104,11 +104,14 @@ profile.character <- function(.x) return(profile_nonnumeric(.x))
 profile.data.frame <- function(.x) {
   call <- match.call()
   .df <- do.call(rbind, lapply(.x, profile))
-  .metadata <- data.frame(.column_name = rownames(.df),
-                          .column_class = vapply(.x, class, "character"),
-                          .column_type = vapply(.x, typeof, "character"),
-                          stringsAsFactors = FALSE,
-                          row.names = as.character(1:nrow(.df)))
+  .metadata <- 
+    data.frame(.column_name = colnames(.x),
+               .column_class = vapply(.x, 
+                                      function(col) class(col)[1], 
+                                      "character"),
+               .column_type = vapply(.x, typeof, "character"),
+               stringsAsFactors = FALSE,
+               row.names = as.character(1:nrow(.df)))
   .profiled_dataset <- cbind(.metadata, .df)
   rownames(.profiled_dataset) <- NULL
   return(.profiled_dataset)
