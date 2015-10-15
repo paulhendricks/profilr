@@ -33,8 +33,8 @@ profile_numeric <- function(.x) {
     .percent_NULLs = function(.x, ...) sum(is.null(.x)) / length(.x),
     .count_NAs = function(.x, ...) sum(is.na(.x)),
     .percent_NAs = function(.x, ...) sum(is.na(.x)) / length(.x),
-    .count_zeroes = function(.x, ...) sum(.x == 0),
-    .percent_zeros = function(.x, ...) sum(.x == 0) / length(.x),
+    .count_zeroes = function(.x, ...) sum(.x == 0, na.rm = TRUE),
+    .percent_zeros = function(.x, ...) sum(.x == 0, na.rm = TRUE) / length(.x),
     .mean_value = function(.x, ...) mean(.x, ...),
     .sd_value = function(.x, ...) stats::sd(.x, ...),
     .q0_value = function(.x, ...) min(.x, ...),
@@ -72,8 +72,8 @@ profile_nonnumeric <- function(.x) {
     .percent_NULLs = function(.x, ...) sum(is.null(.x)) / length(.x),
     .count_NAs = function(.x, ...) sum(is.na(.x)),
     .percent_NAs = function(.x, ...) sum(is.na(.x)) / length(.x),
-    .count_zeroes = function(.x, ...) sum(.x == 0),
-    .percent_zeros = function(.x, ...) sum(.x == 0) / length(.x),
+    .count_zeroes = function(.x, ...) sum(.x == 0, na.rm = TRUE),
+    .percent_zeros = function(.x, ...) sum(.x == 0, na.rm = TRUE) / length(.x),
     .mean_value = function(.x, ...) NA,
     .sd_value = function(.x, ...) NA,
     .q0_value = function(.x, ...) min(.x, ...),
@@ -104,10 +104,10 @@ profile.character <- function(.x) return(profile_nonnumeric(.x))
 profile.data.frame <- function(.x) {
   call <- match.call()
   .df <- do.call(rbind, lapply(.x, profile))
-  .metadata <- 
+  .metadata <-
     data.frame(.column_name = colnames(.x),
-               .column_class = vapply(.x, 
-                                      function(col) class(col)[1], 
+               .column_class = vapply(.x,
+                                      function(col) class(col)[1],
                                       "character"),
                .column_type = vapply(.x, typeof, "character"),
                stringsAsFactors = FALSE,
