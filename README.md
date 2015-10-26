@@ -2,7 +2,7 @@
 profilr
 =======
 
-[![Build Status](https://travis-ci.org/paulhendricks/profilr.png?branch=master)](https://travis-ci.org/paulhendricks/profilr) [![Build status](https://ci.appveyor.com/api/projects/status/pcsh36eeajvevjbg/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/profilr/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/profilr/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/profilr?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/profilr)](http://cran.r-project.org/package=profilr) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/profilr)](http://cran.rstudio.com/package=profilr) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/profilr)](http://cran.r-project.org/package=profilr) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/profilr)](http://cran.rstudio.com/package=profilr) [![Build Status](https://travis-ci.org/paulhendricks/profilr.png?branch=master)](https://travis-ci.org/paulhendricks/profilr) [![Build status](https://ci.appveyor.com/api/projects/status/pcsh36eeajvevjbg/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/profilr/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/profilr/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/profilr?branch=master) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
 `profilr` quickly and easily profiles data using common descriptive statistics.
 
@@ -13,11 +13,15 @@ You can install:
 
 -   the latest released version from CRAN with
 
+    [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/profilr)](http://cran.r-project.org/package=profilr)
+
     ``` r
     install.packages("profilr")
     ```
 
 -   the latest development version from github with
+
+    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fprofilr.svg)](http://badge.fury.io/gh/paulhendricks%2Fprofilr)
 
     ``` r
     if (packageVersion("devtools") < 1.6) {
@@ -120,20 +124,21 @@ mtcars %>%
   group_by(cyl) %>% 
   do(profile(.))
 #> Source: local data frame [33 x 22]
-#> Groups: cyl
+#> Groups: cyl [3]
 #> 
-#>    cyl .column_name .column_class .column_type .count_elements
-#> 1    4          mpg       numeric       double              11
-#> 2    4          cyl       numeric       double              11
-#> 3    4         disp       numeric       double              11
-#> 4    4           hp       numeric       double              11
-#> 5    4         drat       numeric       double              11
-#> 6    4           wt       numeric       double              11
-#> 7    4         qsec       numeric       double              11
-#> 8    4           vs       numeric       double              11
-#> 9    4           am       numeric       double              11
-#> 10   4         gear       numeric       double              11
-#> .. ...          ...           ...          ...             ...
+#>      cyl .column_name .column_class .column_type .count_elements
+#>    (dbl)        (chr)         (chr)        (chr)           (int)
+#> 1      4          mpg       numeric       double              11
+#> 2      4          cyl       numeric       double              11
+#> 3      4         disp       numeric       double              11
+#> 4      4           hp       numeric       double              11
+#> 5      4         drat       numeric       double              11
+#> 6      4           wt       numeric       double              11
+#> 7      4         qsec       numeric       double              11
+#> 8      4           vs       numeric       double              11
+#> 9      4           am       numeric       double              11
+#> 10     4         gear       numeric       double              11
+#> ..   ...          ...           ...          ...             ...
 #> Variables not shown: .count_uniques (int), .percent_uniques (dbl),
 #>   .count_NULLs (int), .percent_NULLs (dbl), .count_NAs (int), .percent_NAs
 #>   (dbl), .count_zeroes (int), .percent_zeros (dbl), .mean_value (dbl),
@@ -142,9 +147,14 @@ mtcars %>%
 #>   .bottom_5_values (chr)
 ```
 
-Author
+People
 ------
 
-The original author of `profilr` is [Paul Hendricks](https://github.com/paulhendricks).
+-   The original author of `describer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
 
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/paulhendricks/)
+-   The lead maintainer of `describer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+
+License
+-------
+
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/profilr/blob/master/LICENSE)
