@@ -1,17 +1,20 @@
 library(profilr)
 context("frequent_values()")
 
+# nolint start
 sample_size <- 10000
 set.seed(1)
 v <- sample(c(NA, 1:99), size = sample_size, replace = TRUE)
 set.seed(1)
-w <- sample(c(NA, seq(from = 0, to = 1, length.out = 99)), size = sample_size, replace = TRUE)
+w <- sample(c(NA, seq(from = 0, to = 1, length.out = 99)),
+            size = sample_size, replace = TRUE)
 set.seed(1)
 x <- sample(c(NA, letters), size = sample_size, replace = TRUE)
 set.seed(1)
 y <- sample(c(NA, TRUE, FALSE), size = sample_size, replace = TRUE)
 set.seed(1)
-z <- sample(seq(as.Date("1990/1/1"), as.Date("1999/1/1"), "years"), size = sample_size, replace = TRUE)
+z <- sample(seq(as.Date("1990/1/1"), as.Date("1999/1/1"), "years"),
+            size = sample_size, replace = TRUE)
 
 test_that("most frequent_values work properly ", {
   expect_equal(frequent_values(v, n = 5L, type = "most"), "(1) 25 [125]\n (2) 5 [123]\n (3) 86 [120]\n (4) 40 [119]\n (5) 33 [118]\n")
@@ -33,9 +36,8 @@ test_that("frequent_values returns the correct errors", {
   expect_error(frequent_values(x, n = 10L, type = "something"))
   expect_error(frequent_values(x, n = 0L, type = "most"))
   expect_error(frequent_values(x, n = c(1L, 2L), type = "most"))
-  expect_error(frequent_values(list(3, 5, 6, 1:10, letters, list(1, 2, 3)), n = 5L, type = "most"))
+  expect_error(frequent_values(list(3, 5, 6, 1:10, letters,
+                                    list(1, 2, 3)), n = 5L, type = "most"))
 })
 
-
-# p <- c(rep(NA, 5), rep(TRUE, 5), rep(FALSE, 5))
-# frequent_values(p, n = 5L, type = "most")
+# nolint end

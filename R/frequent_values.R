@@ -19,17 +19,17 @@ frequent_values <- function(.x, n = 5L, type = "most") {
                  decreasing = TRUE)
 
   if (type == "most"){
+    r_a <- unname(utils::head(rank(-values, ties.method = "min",
+                                   na.last = FALSE), n))
     values_processed <-
-      concat_rank_value_occurrence(r = unname(utils::head(rank(-values,
-                                                               ties.method = "min",
-                                                               na.last = FALSE), n)),
+      concat_rank_value_occurrence(r = r_a,
                                    n = utils::head(names(values), n),
                                    o = utils::head(unname(values), n))
   } else {
+    r_a <- unname(rev(utils::tail(rank(-values, ties.method = "min",
+                                       na.last = FALSE), n)))
     values_processed <-
-      concat_rank_value_occurrence(r = unname(rev(utils::tail(rank(-values,
-                                                                   ties.method = "min",
-                                                                   na.last = FALSE), n))),
+      concat_rank_value_occurrence(r = r_a,
                                    n = rev(utils::tail(names(values), n)),
                                    o = rev(utils::tail(unname(values), n)))
   }
