@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 profilr
 =======
@@ -9,28 +10,22 @@ profilr
 Installation
 ------------
 
-You can install:
+You can install the latest development version from CRAN:
 
--   the latest released version from CRAN with
+``` r
+install.packages("profilr")
+```
 
-    [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/profilr)](http://cran.r-project.org/package=profilr)
+Or from GitHub with:
 
-    ``` r
-    install.packages("profilr")
-    ```
+``` r
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("paulhendricks/profilr")
+```
 
--   the latest development version from github with
-
-    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fprofilr.svg)](http://badge.fury.io/gh/paulhendricks%2Fprofilr)
-
-    ``` r
-    if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
-    }
-    devtools::install_github("paulhendricks/profilr")
-    ```
-
-If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/paulhendricks/profilr/issues).
+If you encounter a clear bug, please file a [minimal reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example) on [GitHub](https://github.com/paulhendricks/profilr/issues).
 
 API
 ---
@@ -40,7 +35,6 @@ library(dplyr, warn.conflicts = FALSE)
 library(profilr)
 #> 
 #> Attaching package: 'profilr'
-#> 
 #> The following object is masked from 'package:stats':
 #> 
 #>     profile
@@ -123,38 +117,41 @@ mtcars %>%
 mtcars %>% 
   group_by(cyl) %>% 
   do(profile(.))
-#> Source: local data frame [33 x 22]
-#> Groups: cyl [3]
-#> 
+#> # A tibble: 33 x 22
+#> # Groups:   cyl [3]
 #>      cyl .column_name .column_class .column_type .count_elements
-#>    (dbl)        (chr)         (chr)        (chr)           (int)
-#> 1      4          mpg       numeric       double              11
-#> 2      4          cyl       numeric       double              11
-#> 3      4         disp       numeric       double              11
-#> 4      4           hp       numeric       double              11
-#> 5      4         drat       numeric       double              11
-#> 6      4           wt       numeric       double              11
-#> 7      4         qsec       numeric       double              11
-#> 8      4           vs       numeric       double              11
-#> 9      4           am       numeric       double              11
+#>    <dbl>        <chr>         <chr>        <chr>           <int>
+#>  1     4          mpg       numeric       double              11
+#>  2     4          cyl       numeric       double              11
+#>  3     4         disp       numeric       double              11
+#>  4     4           hp       numeric       double              11
+#>  5     4         drat       numeric       double              11
+#>  6     4           wt       numeric       double              11
+#>  7     4         qsec       numeric       double              11
+#>  8     4           vs       numeric       double              11
+#>  9     4           am       numeric       double              11
 #> 10     4         gear       numeric       double              11
-#> ..   ...          ...           ...          ...             ...
-#> Variables not shown: .count_uniques (int), .percent_uniques (dbl),
-#>   .count_NULLs (int), .percent_NULLs (dbl), .count_NAs (int), .percent_NAs
-#>   (dbl), .count_zeroes (int), .percent_zeros (dbl), .mean_value (dbl),
-#>   .sd_value (dbl), .q0_value (dbl), .q25_value (dbl), .q50_value (dbl),
-#>   .q75_value (dbl), .q100_value (dbl), .top_5_values (chr),
-#>   .bottom_5_values (chr)
+#> # ... with 23 more rows, and 17 more variables: .count_uniques <int>,
+#> #   .percent_uniques <dbl>, .count_NULLs <int>, .percent_NULLs <dbl>,
+#> #   .count_NAs <int>, .percent_NAs <dbl>, .count_zeroes <int>,
+#> #   .percent_zeros <dbl>, .mean_value <dbl>, .sd_value <dbl>,
+#> #   .q0_value <dbl>, .q25_value <dbl>, .q50_value <dbl>, .q75_value <dbl>,
+#> #   .q100_value <dbl>, .top_5_values <chr>, .bottom_5_values <chr>
 ```
 
-People
-------
+Citation
+--------
 
--   The original author of `describer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+To cite package ‘profilr’ in publications use:
 
--   The lead maintainer of `describer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+    Paul Hendricks (2015). profilr: Quickly Profile Data in R. R package version 0.1.0. https://CRAN.R-project.org/package=profilr
 
-License
--------
+A BibTeX entry for LaTeX users is
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/profilr/blob/master/LICENSE)
+    @Manual{,
+      title = {profilr: Quickly Profile Data in R},
+      author = {Paul Hendricks},
+      year = {2015},
+      note = {R package version 0.1.0},
+      url = {https://CRAN.R-project.org/package=profilr},
+    }
